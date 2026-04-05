@@ -1,3 +1,58 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+/* Body */
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background: #0a0e1a;
+    color: #f1f5f9;
+    min-height: 100vh;
+}
+ 
+/* Light Mode */
+.light-mode {
+    background: #f1f5f9;
+    color: #0a0e1a;
+}
+ 
+.light-mode .controls,
+.light-mode .maze-box {
+    background: #ffffff;
+    border-color: #cbd5e1;
+}
+ 
+.light-mode .cell.wall {
+    background: #71767c;
+}
+ 
+.light-mode .cell.path {
+    background: #acb0b6;
+}
+ 
+.light-mode .cell.start {
+    background: #0ea5e9;
+}
+ 
+.light-mode .cell.end {
+    background: #f59e0b;
+}
+ 
+.light-mode .cell.visited {
+    background: rgba(14, 165, 233, 0.5);
+}
+ 
+.light-mode .cell.backtrack {
+    background: rgba(239, 68, 68, 0.4);
+}
+ 
+.light-mode .cell.solution {
+    background: #10b981;
+}
+ 
 /* App Container */
 .app {
     min-height: 100vh;
@@ -6,14 +61,14 @@
     align-items: center;
     padding: 1rem;
 }
-
+ 
 /* Settings */
 .settings {
     position: absolute;
     top: 20px;
     right: 20px;
 }
-
+ 
 .settings-btn {
     background: #1e293b;
     color: #f1f5f9;
@@ -24,12 +79,12 @@
     font-size: 1rem;
     transition: 0.15s;
 }
-
+ 
 .settings-btn:hover {
     filter: brightness(1.2);
     box-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
 }
-
+ 
 /* SETTINGS MENU — Improved Look */
 .settings-menu {
     position: absolute;
@@ -46,4 +101,27 @@
     z-index: 10;
     box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
     animation: fadeIn 0.2s ease-out;
+}
+ 
+.settings-menu.hidden {
+    display: none;
+}
+ 
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+ 
+/* Settings item container */
+.settings-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+ 
+.settings-item label {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    letter-spacing: 0.5px;
 }

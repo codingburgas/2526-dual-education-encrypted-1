@@ -1,54 +1,49 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body */
-body {
-    font-family: 'JetBrains Mono', monospace;
-    background: #0a0e1a;
-    color: #f1f5f9;
+/* App Container */
+.app {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
 }
 
-/* Light Mode */
-.light-mode {
-    background: #f1f5f9;
-    color: #0a0e1a;
+/* Settings */
+.settings {
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
-.light-mode .controls,
-.light-mode .maze-box {
-    background: #ffffff;
-    border-color: #cbd5e1;
+.settings-btn {
+    background: #1e293b;
+    color: #f1f5f9;
+    border: 1px solid #334155;
+    padding: 0.5rem 0.7rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.15s;
 }
 
-.light-mode .cell.wall {
-    background: #71767c;
+.settings-btn:hover {
+    filter: brightness(1.2);
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
 }
 
-.light-mode .cell.path {
-    background: #acb0b6;
-}
-
-.light-mode .cell.start {
-    background: #0ea5e9;
-}
-
-.light-mode .cell.end {
-    background: #f59e0b;
-}
-
-.light-mode .cell.visited {
-    background: rgba(14, 165, 233, 0.5);
-}
-
-.light-mode .cell.backtrack {
-    background: rgba(239, 68, 68, 0.4);
-}
-
-.light-mode .cell.solution {
-    background: #10b981;
+/* SETTINGS MENU — Improved Look */
+.settings-menu {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background: #111827;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 1.2rem;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.15);
+    animation: fadeIn 0.2s ease-out;
 }

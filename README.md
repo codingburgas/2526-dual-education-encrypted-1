@@ -30,7 +30,7 @@ We’re building experience, teamwork, and the foundation for the developers we 
 <h2 align="left">📄 Documents</h2><br>
   <ul>
     <li><a href="https://codingburgas-my.sharepoint.com/:w:/g/personal/miiliev24_codingburgas_bg/IQAdMiFcjh51RKG6O6gjd32CAU1syIHPfVmDrVlgUMtu5fw?e=wCcYVW">Documentation</a></li>
-    <li><a href="">Presentation</a></li>
+    <li><a href="https://codingburgas-my.sharepoint.com/:p:/g/personal/ihiliev24_codingburgas_bg/IQAUNSvGrK_IR4I6KQ4X_BgkASOt5sQ4UhpvesnBgPWe4gQ?e=Z40POv">Presentation</a></li>
   </ul>  
  
 <h2 align="left">👨🏻💻 Team Members </h2>
@@ -57,7 +57,7 @@ We’re building experience, teamwork, and the foundation for the developers we 
     <td align="center">Dimitar Yanakiev</td>
     <td align="center">Backend developer</td>
     <td align="center">🟩 9V</td>
-    <td align="center"> <a href="https://github.com/DimitarYanakiev">DPDimitrov24 </a></td>
+    <td align="center"> <a href="https://github.com/DimitarYanakiev">DVYanakiev24 </a></td>
   </tr>
   </table>
 <br>

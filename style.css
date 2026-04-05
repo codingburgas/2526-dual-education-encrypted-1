@@ -294,3 +294,131 @@ input[type="range"]::-webkit-slider-thumb {
     background: #334155;
     color: white;
 }
+
+/* Result Messages */
+.result {
+    width: 100%;
+    min-height: 20px;
+    margin-bottom: 2rem;
+}
+ 
+.result-card {
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    animation: slideIn 0.3s ease;
+}
+ 
+.result-card.success {
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid #10b981;
+}
+ 
+.result-card.failure {
+    background: rgba(239, 68, 68, 0.15);
+    border: 1px solid #ef4444;
+}
+ 
+.result-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+ 
+.result-card.success .result-icon {
+    background: #10b981;
+    color: white;
+}
+ 
+.result-card.failure .result-icon {
+    background: #ef4444;
+    color: white;
+}
+ 
+/* Maze */
+.maze-box {
+    background: #1a1f35;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+}
+ 
+.maze {
+    display: grid;
+    gap: 2px;
+    background: #0a0e1a;
+    padding: 2px;
+    border-radius: 8px;
+}
+ 
+.cell {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.15s, transform 0.15s;
+}
+ 
+.cell.wall {
+    background: #1e293b;
+}
+ 
+.cell.path {
+    background: #334155;
+}
+ 
+.cell.start {
+    background: #22d3ee;
+    color: #0a0e1a;
+}
+ 
+.cell.end {
+    background: #f59e0b;
+    color: #0a0e1a;
+}
+ 
+.cell.visited {
+    background: rgba(34, 211, 238, 0.7);
+}
+ 
+.cell.backtrack {
+    background: rgba(239, 68, 68, 0.5);
+}
+ 
+.cell.solution {
+    background: #10b981;
+    transform: scale(1.1);
+}
+ 
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+ 
+/* Footer */
+.footer {
+    width: 100%;
+    padding: 1.5rem;
+    border-top: 1px solid #334155;
+    text-align: center;
+    color: #64748b;
+}

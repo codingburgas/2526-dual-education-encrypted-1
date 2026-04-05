@@ -138,3 +138,133 @@ function findCell(val) {
         for (let c = 0; c < maze[r].length; c++)
             if (maze[r][c] === val) return { row: r, col: c };
 }
+
+// ===============================
+// ANIMATION
+// ===============================
+function animate(result) {
+    isRunning = true;
+    let i = 0;
+    const speed = parseInt(speedSlider.value);
+ 
+    function step() {
+        if (i < result.steps.length) {
+            const s = result.steps[i];
+            const div = document.getElementById(`cell-${s.r}-${s.c}`);
+ 
+            if (div && maze[s.r][s.c] !== 'S' && maze[s.r][s.c] !== 'E') {
+                div.className = 'cell ' + (s.action === 'visit' ? 'visited' : 'backtrack');
+            }
+ 
+            i++;
+            animationTimer = setTimeout(step, speed);
+        } else {
+            finish(result);
+        }
+    }
+ 
+    step();
+}
+ 
+function finish(result) {
+    result.path.forEach(p => {
+        const div = document.getElementById(`cell-${p.r}-${p.c}`);
+        if (div && maze[p.r][p.c] !== 'S' && maze[p.r][p.c] !== 'E') {
+            div.className = 'cell solution';
+        }
+    });
+ 
+    resultEl.innerHTML = result.solved
+        ? `<div class="result-card success"><div class="result-icon">✓</div>Maze solved in ${result.path.length} steps!</div>`
+        : `<div class="result-card failure"><div class="result-icon">✗</div>Maze not solvable!</div>`;
+ 
+    isRunning = false;
+}
+ 
+ 
+// ===============================
+// BUTTON HANDLERS
+// ===============================
+generateBtn.onclick = () => !isRunning && generateMaze();
+solveBtn.onclick = () => !isRunning && animate(solveMaze());
+instantBtn.onclick = () => !isRunning && finish(solveMaze());
+resetBtn.onclick = () => {
+    if (animationTimer) clearTimeout(animationTimer);
+    drawMaze();
+    resultEl.innerHTML = '';
+    isRunning = false;
+};
+ 
+ 
+// ===============================
+// SETTINGS MENU
+// ===============================
+settingsBtn.onclick = () => {
+    settingsMenu.classList.toggle('hidden');
+};
+ 
+ 
+// ===============================
+// LANGUAGE SYSTEM
+// ===============================
+const translations = {
+    en: {
+        generate: "New Maze",
+        solve: "Solve",
+        instant: "Instant",
+        reset: "Reset",
+        speed: "Animation Speed:",
+        fast: "Fast",
+        slow: "Slow",
+        subtitle: "Maze Solver"
+    },
+    bg: {
+        generate: "Нов лабиринт",
+        solve: "Реши",
+        instant: "Мигновено",
+        reset: "Нулирай",
+        speed: "Скорост на анимацията:",
+        fast: "Бързо",
+        slow: "Бавно",
+        subtitle: "Решаване на лабиринт"
+    }
+};
+ 
+function applyLanguage(lang) {
+    const t = translations[lang];
+ 
+    generateBtn.textContent = t.generate;
+    solveBtn.textContent = t.solve;
+    instantBtn.textContent = t.instant;
+    resetBtn.textContent = t.reset;
+ 
+    document.querySelector('.speed-box label').textContent = t.speed;
+    document.querySelector('.slider-row span:first-child').textContent = t.fast;
+    document.querySelector('.slider-row span:last-child').textContent = t.slow;
+ 
+    document.querySelector('.subtitle').textContent = t.subtitle;
+}
+ 
+languageSelect.onchange = () => {
+    applyLanguage(languageSelect.value);
+};
+ 
+ 
+// ===============================
+// THEME SYSTEM
+// ===============================
+themeSelect.onchange = () => {
+    if (themeSelect.value === "light") {
+        document.body.classList.add("light-mode");
+    } else {
+        document.body.classList.remove("light-mode");
+    }
+};
+ 
+ 
+// ===============================
+// INITIALIZE
+// ===============================
+generateMaze();
+applyLanguage("en");
+themeSelect.value = "dark";

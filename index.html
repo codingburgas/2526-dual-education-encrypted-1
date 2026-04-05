@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypted Maze Solver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+
+        <!-- SETTINGS BUTTON -->
+        <div class="settings">
+            <button id="settingsBtn" class="settings-btn">⚙</button>
+
+            <div id="settingsMenu" class="settings-menu hidden">
+                <div class="settings-item">
+                    <label>Language:</label>
+                    <select id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="bg">Български</option>
+                    </select>
+                </div>
+
+                <div class="settings-item">
+                    <label>Theme:</label>
+                    <select id="themeSelect">
+                        <option value="dark">Dark</option>
+                        <option value="light">Light</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo">
+                <div class="logo-icon">
+                    <img src="Images/Team_Logo.jpg" alt="Team Logo">
+                </div>
+
+                <div class="logo-text"><h1>Encrypted</h1></div>
+            </div>
+            <h2 class="subtitle">Maze Solver</h2>
+        </header>
+
+        <!-- MAIN -->
+        <main class="main">
+
+            <!-- CONTROLS -->
+            <section class="controls">
+                <div class="speed-box">
+                    <label>Animation Speed:</label>
+                    <div class="slider-row">
+                        <span>Fast</span>
+                        <input type="range" id="speedSlider" min="10" max="200" value="50">
+                        <span>Slow</span>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button id="generateBtn" class="btn btn-purple">New Maze</button>
+                    <button id="solveBtn" class="btn btn-cyan">Solve</button>
+                    <button id="instantBtn" class="btn btn-gray">Instant</button>
+                    <button id="resetBtn" class="btn btn-outline">Reset</button>
+                </div>
+            </section>
+
+            <!-- RESULT -->
+            <section id="result" class="result"></section>
+
+            <!-- MAZE -->
+            <section class="maze-box">
+                <div id="maze" class="maze"></div>
+            </section>
+
+        </main>
+
+        <footer class="footer">
+            <p>© 2026 Encrypted Maze Solver</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

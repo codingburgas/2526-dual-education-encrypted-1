@@ -1,0 +1,54 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: 'JetBrains Mono', monospace;
+    background: #0a0e1a;
+    color: #f1f5f9;
+    min-height: 100vh;
+}
+
+/* Light Mode */
+.light-mode {
+    background: #f1f5f9;
+    color: #0a0e1a;
+}
+
+.light-mode .controls,
+.light-mode .maze-box {
+    background: #ffffff;
+    border-color: #cbd5e1;
+}
+
+.light-mode .cell.wall {
+    background: #71767c;
+}
+
+.light-mode .cell.path {
+    background: #acb0b6;
+}
+
+.light-mode .cell.start {
+    background: #0ea5e9;
+}
+
+.light-mode .cell.end {
+    background: #f59e0b;
+}
+
+.light-mode .cell.visited {
+    background: rgba(14, 165, 233, 0.5);
+}
+
+.light-mode .cell.backtrack {
+    background: rgba(239, 68, 68, 0.4);
+}
+
+.light-mode .cell.solution {
+    background: #10b981;
+}
